@@ -1,8 +1,17 @@
 {
-  "theme": "dark",
-  "background": "#000000",
-  "stroke": "#333333",
-  "color": ["#c039ff","#8b38ff","#5e3cff","#3b6aff","#39a3ff","#3ad9ff","#3dffe4","#5effc9","#7dff9c"],
-  "strokeWidth": 0.5,
-  "animation": true
+  "type": "normal",
+  "fileName": "profile-custom.svg",
+  "backgroundColor": "transparent",
+  "foregroundColor": "#000000",
+  "strongColor": "#000000",
+  "weakColor": "#808080",
+  "radarColor": "#FF06B5",
+  "growingAnimation": true,
+  "contribColors": [
+    "transparent",
+    "#880808",
+    "#a5000d",
+    "#cc0a0a",
+    "#FF06B5"
+  ]
 }
