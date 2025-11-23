@@ -8,10 +8,19 @@
   "radarColor": "#FF06B5",
   "growingAnimation": true,
   "contribColors": [
-    "transparent",
+    "#000000",
     "#880808",
-    "#a5000d",
-    "#cc0a0a",
+    "#910716",
+    "#9B0724",
+    "#A50733",
+    "#AF0741",
+    "#B90750",
+    "#C3075E",
+    "#CD066C",
+    "#D7067B",
+    "#E10689",
+    "#EB0698",
+    "#F506A6",
     "#FF06B5"
   ]
 }
