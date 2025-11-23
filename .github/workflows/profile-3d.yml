@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "0 18 * * *"
   workflow_dispatch:
+  push:
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -11,19 +13,28 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: generate-github-profile-3d-contrib
     steps:
-      - uses: actions/checkout@v5
-      - uses: yoshi389111/github-profile-3d-contrib@latest
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # ← important
+          ref: main
+
+      - name: Generate 3D contribution
+        uses: yoshi389111/github-profile-3d-contrib@latest
         env:
           GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-          SETTING_JSON: .github/darl-main.json
-      - name: Commit & Push
+          SETTING_JSON: .github/dark-main.json
+
+      - name: Commit & Push (safe version)
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git pull --rebase origin main   # ← this line fixes everything
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@github.com"
           git add -A
-          git commit -m "updated 3d contrib" || echo "No changes"
-          git push
+          if git commit -m "updated 3d contrib"; then
+            git pull --rebase origin main
+            git push origin main || git push origin main --force-with-lease
+          else
+            echo "No changes to commit"
+          fi
