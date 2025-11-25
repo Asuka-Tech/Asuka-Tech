@@ -1,13 +1,13 @@
 <div align="top">
 
-<img src="https://raw.githubusercontent.com/Asuka-Tech/About-Asuka/refs/heads/main/dev_of_the_week.png"
-     align="right"
-     alt="Dev of the Week">
-
 <img height="150" 
      src="https://github-readme-stats-asuka-tech.vercel.app/api?username=Asuka-Tech&hide_border=true&bg_color=0%2CFF06B5%2C880808&card_width=466&show_icons=true&icon_color=000000&text_color=000000&title_color=000000&rank_icon=full&hide_rank=false"
      align="left"
      alt="Stats">
+
+<img src="https://raw.githubusercontent.com/Asuka-Tech/About-Asuka/refs/heads/main/dev_of_the_week.png"
+     align="right"
+     alt="Dev of the Week">
 
 <div></div>
 
